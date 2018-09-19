@@ -24,7 +24,7 @@ class StringCalculator {
 }
 
 $stringCalc = new StringCalculator();
-echo($stringCalc->add('2,3,4,1000'));
+echo($stringCalc->add('2,3,3,1000'));
 echo PHP_EOL;
 
 $stringCalc2 = new StringCalculator();

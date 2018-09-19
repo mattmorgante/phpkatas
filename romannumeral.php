@@ -19,10 +19,8 @@ class RomanNumeralsConverter {
     ];
 
     public static function convert($number) {
-
         // build a string to return
         $solution = '';
-
         foreach (static::$lookup as $iterator => $numeral) {
             // basic structure = slowly reduce the number while adding the numerals
             while ($number >= $iterator) {
@@ -33,7 +31,6 @@ class RomanNumeralsConverter {
                 $number -= $iterator;
             }
         }
-
         return $solution;
     }
 }

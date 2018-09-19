@@ -1,6 +1,8 @@
 <?php
 
 class Tennis {
+    // class-wide attributes that are available as $this->attribute
+    // should be created in the constructor, where they are type-hinted as class player
     protected $player1;
     protected $player2;
 
@@ -17,8 +19,9 @@ class Tennis {
     }
 
     public function score() {
+        // work your way down in points
         if ($this->hasAWinner()) {
-            return 'Win for ' . $this->winner()->name;
+            return 'Win for ' . $this->leader()->name;
         }
 
         if ($this->isDeuce()) {
@@ -26,7 +29,7 @@ class Tennis {
         }
 
         if ($this->hasTheAdvantage()) {
-            return 'Advantage for ' . $this->winner()->name;
+            return 'Advantage for ' . $this->leader()->name;
         }
 
         $firstScore = $this->lookup[$this->player1->points];
@@ -55,7 +58,7 @@ class Tennis {
         return abs($this->player1->points - $this->player2->points) >= 2;
     }
 
-    public function winner() {
+    public function leader() {
         return $this->player1->points > $this->player2->points ? $this->player1 : $this->player2;
     }
 
@@ -77,7 +80,7 @@ class Player {
     }
 
     public function earnPoints($points) {
-        $this->points = $points;
+        $this->points += $points;
     }
 }
 
@@ -87,6 +90,7 @@ $john = new Player('John', 0);
 $game = new Tennis($jane, $john);
 $jane->earnPoints(2);
 $john->earnPoints(2);
+$jane->earnPoints(1);
 // should be thirty all
 echo($game->score());
 echo PHP_EOL;
