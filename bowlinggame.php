@@ -58,9 +58,9 @@ class BowlingGame {
         return $this->rolls[$roll] + $this->rolls[$roll + 1];
     }
 
-    public function rollSpare($game) {
-        $game->roll(8);
-        $game->roll(2);
+    public function rollSpare() {
+        $this->roll(8);
+        $this->roll(2);
     }
 
     public function rollTimes($count, $pins) {
@@ -78,10 +78,9 @@ echo PHP_EOL;
 
 
 $game2 = new BowlingGame();
-$game2->rollSpare($game2);
+$game2->rollSpare();
 $game2->roll(6);
 $game2->rollTimes(17, 0);
-
 echo($game2->score());
 echo PHP_EOL;
 
