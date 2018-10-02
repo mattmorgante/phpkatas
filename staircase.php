@@ -2,16 +2,17 @@
 function staircase($n) {  
 	for ($i = 1; $i <= $n; $i++) { 
 		$spaces = $n-$i;
+		$output = "";
 		while ($spaces) { 
-			echo " ";
+			$output .= " ";
 			$spaces--;
 		}
 		$stairs = 1;
 		while ($stairs <= $i) { 
-			echo "#";
+			$output .= "#";
 			$stairs++;
 		}
-		echo PHP_EOL;
+		echo $output . PHP_EOL;
 	} 
 }
 
