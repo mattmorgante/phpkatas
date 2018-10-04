@@ -2,7 +2,7 @@
 
 // given an array and a sum 
 // determine if the sum is in any pair of the array
-// the array is not necessarily ordered 
+// the array is not necessly ordered 
 
 function findSumUnordered($array, $sum) { 
     // store the complements in an array 
