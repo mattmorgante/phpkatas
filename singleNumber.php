@@ -3,9 +3,9 @@
 // given an array of numbers 
 // find the only element that is not repeated 
 
-function findSingle($values) { 
+function findSingle($array) {
     $elements = [];
-    foreach ($values as $value) { 
+    foreach ($array as $value) {
         if (array_key_exists($value, $elements)) { 
             $elements[$value] = 2;
         } else {

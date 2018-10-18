@@ -1,7 +1,6 @@
 <? 
 
-// give an array of integers, return the subarray with the largest sum 
-
+// give an array of integers, return the subarray with the largest sum
 function subarray($myArray) { 
     $currentSum = $myArray[0];
     $totalSum = $myArray[0];

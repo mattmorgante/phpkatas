@@ -15,7 +15,6 @@ class BowlingGame {
         }
         // add to the array each time roll is called
         $this->rolls[] = $pins;
-
     }
 
     public function score() {
